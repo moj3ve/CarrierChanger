@@ -1,0 +1,9 @@
+Package: com.bandarHl.carrierchanger
+Name: CarrierChanger
+Depends: mobilesubstrate
+Version: 2.0
+Architecture: iphoneos-arm
+Description: An awesome Tweak to change carrier for anything you want!
+Homepage: http://twitter.com/BandarHL
+Maintainer: @BandarHL
+Section: Tweaks

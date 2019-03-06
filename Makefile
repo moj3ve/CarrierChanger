@@ -1,14 +1,13 @@
 include $(THEOS)/makefiles/common.mk
 
-BUNDLE_NAME = CarrierChanger
-CarrierChanger_FILES = ccgRootListController.m
-CarrierChanger_INSTALL_PATH = /Library/PreferenceBundles
-CarrierChanger_FRAMEWORKS = UIKit Accounts Social Twitter
-CarrierChanger_PRIVATE_FRAMEWORKS = Preferences
-CarrierChanger_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
+TWEAK_NAME = CarrierChanger
+CarrierChanger_FILES = Tweak.xm
+CarrierChanger_EXTRA_FRAMEWORKS += Cephei
+CarrierChanger_FRAMEWORKS = UIKit
 
-include $(THEOS_MAKE_PATH)/bundle.mk
+include $(THEOS_MAKE_PATH)/tweak.mk
 
-internal-stage::
-	$(ECHO_NOTHING)mkdir -p $(THEOS_STAGING_DIR)/Library/PreferenceLoader/Preferences$(ECHO_END)
-	$(ECHO_NOTHING)cp entry.plist $(THEOS_STAGING_DIR)/Library/PreferenceLoader/Preferences/CarrierChanger.plist$(ECHO_END)
+after-install::
+	install.exec "killall -9 SpringBoard"
+SUBPROJECTS += carrierchanger
+include $(THEOS_MAKE_PATH)/aggregate.mk
