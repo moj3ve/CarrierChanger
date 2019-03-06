@@ -20,6 +20,8 @@
     return _specifiers;
 }
 
+- (void)DidEnter:(id)sender {
+}
 - (void)resetPrefs:(id)sender {
     HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"com.bandarHl.carrierchanger"];
     [prefs removeAllObjects];

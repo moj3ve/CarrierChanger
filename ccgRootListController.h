@@ -5,7 +5,7 @@
 #import <Cephei/HBPreferences.h>
 #import <spawn.h>
 
-@interface ccgRootListController : HBRootListController
+@interface ccgRootListController : HBRootListController 
 
 - (void)resetPrefs:(id)sender;
 - (void)respring:(id)sender;
